@@ -1,0 +1,36 @@
+{
+  "name": "DropPoint",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "number"
+    },
+    "lng": {
+      "type": "number"
+    },
+    "address": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "capacity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "high"
+    }
+  },
+  "required": [
+    "name",
+    "lat",
+    "lng"
+  ]
+}

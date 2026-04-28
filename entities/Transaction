@@ -1,0 +1,33 @@
+{
+  "name": "Transaction",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "reward",
+        "withdrawal",
+        "topup"
+      ],
+      "default": "reward"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    },
+    "balance_after": {
+      "type": "number"
+    },
+    "detection_id": {
+      "type": "string",
+      "description": "Related detection if reward type"
+    }
+  },
+  "required": [
+    "type",
+    "amount",
+    "description"
+  ]
+}

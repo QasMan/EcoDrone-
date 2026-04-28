@@ -1,0 +1,40 @@
+{
+  "name": "DroneLog",
+  "type": "object",
+  "properties": {
+    "detection_id": {
+      "type": "string",
+      "description": "Related WasteDetection ID"
+    },
+    "drone_id": {
+      "type": "string",
+      "description": "Drone identifier"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "dispatched",
+        "en_route",
+        "arrived",
+        "qr_verified",
+        "collecting",
+        "returning",
+        "delivered"
+      ],
+      "default": "dispatched"
+    },
+    "location": {
+      "type": "string"
+    },
+    "eta_minutes": {
+      "type": "number"
+    },
+    "battery_level": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "detection_id",
+    "status"
+  ]
+}

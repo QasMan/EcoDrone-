@@ -1,0 +1,58 @@
+{
+  "name": "WasteDetection",
+  "type": "object",
+  "properties": {
+    "image_url": {
+      "type": "string",
+      "description": "URL of the captured waste image"
+    },
+    "result": {
+      "type": "string",
+      "description": "AI detection result"
+    },
+    "confidence": {
+      "type": "number",
+      "description": "Confidence score 0-100"
+    },
+    "valid": {
+      "type": "boolean",
+      "description": "Whether the waste type is valid for recycling"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "detected",
+        "drone_dispatched",
+        "drone_en_route",
+        "qr_scanned",
+        "collected",
+        "delivered",
+        "rewarded"
+      ],
+      "default": "detected"
+    },
+    "drop_point": {
+      "type": "string",
+      "description": "Selected drop point name"
+    },
+    "drop_point_lat": {
+      "type": "number"
+    },
+    "drop_point_lng": {
+      "type": "number"
+    },
+    "qr_code": {
+      "type": "string",
+      "description": "Generated QR code identifier"
+    },
+    "points_earned": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "result",
+    "confidence",
+    "valid"
+  ]
+}
